@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Financial Calculator</title>
+</head>
+<body>
+<h1>Financial Calculator</h1>
+
+<label for="principal">Principal Amount:</label>
+<input type="number" id="principal" placeholder="Enter Principal Amount">
+
+<label for="interest">Annual Interest Rate (%):</label>
+<input type="number" id="interest" placeholder="Enter Annual Interest Rate">
+
+<label for="years">Number of Years:</label>
+<input type="number" id="years" placeholder="Enter Number of Years">
+
+<button onclick="calculate()">Calculate</button>
+
+<h2>Results:</h2>
+<p id="result"></p>
+
+<script>
+function calculate() {
+var principal = parseFloat(document.getElementById("principal").value);
+var interest = parseFloat(document.getElementById("interest").value) / 100;
+var years = parseFloat(document.getElementById("years").value);
+
+var futureValue = principal * Math.pow(1 + interest, years);
+
+document.getElementById("result").innerHTML = "Future Value: $" + futureValue.toFixed(2);
+}
+</script>
+</body>
+</html>
